@@ -10,7 +10,7 @@ from bokeh.models import DataTable, TableColumn, HTMLTemplateFormatter, StringFo
 
 
 
-@st.cache
+@st.cache(ttl=3600)
 def get_data():
     data_url = 'https://api.flipsidecrypto.com/api/v2/queries/48068a37-cc2c-4843-8291-343186744841/data/latest'
     df = pd.read_json(data_url)
